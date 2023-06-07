@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a -p -m; echo;
+printf '%s\n' "$(ls -a -p -m)"
