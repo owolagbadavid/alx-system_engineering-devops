@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ -o hello -user guillaume ]; then
+  chown betty hello
+fi
