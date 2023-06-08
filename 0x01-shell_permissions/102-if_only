@@ -1,4 +1,2 @@
 #!/bin/bash
-if [ -o hello -user guillaume ]; then
-  chown betty hello
-fi
+chown --from=guillaume betty hello
