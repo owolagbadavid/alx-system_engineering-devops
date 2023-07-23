@@ -2,7 +2,7 @@
 
 ## What each script is doing
 
-**0-hello_world**
+**0-hello_world** - Prints Hello World
 
 **1-confused_smiley**
 
