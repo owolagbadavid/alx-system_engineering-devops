@@ -3,7 +3,7 @@
 ## What each script is doing
 
 
-0-alias
+0-alias - creates an alias
 
 1-hello_you
 
