@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Loops and displays "bad luck" for the 4th iteration and good on 8th
+
+I=1
+
+while [ $I -le 10 ]; do
+    if [ $I -eq 4 ]; then
+      	echo "bad luck"
+    elif [ $I -eq 8 ]; then
+	    echo "good luck"
+    else
+	    echo "Best School"
+    fi
+    I=$((i+1))
+done

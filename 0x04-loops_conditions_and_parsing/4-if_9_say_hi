@@ -1,3 +1,12 @@
 #!/usr/bin/env bash
-# This script is displaying "Hi" 10 times
+# This script is displaying "Best SChool" all but the 9th iteration
 
+I=0
+while ((I < 10)); do
+    if ((I == 8)); then
+        echo "Best School"
+    else
+        echo "Hi"
+    fi
+    I=$((I+1))
+done
