@@ -4,9 +4,9 @@
 I=0
 while ((I < 10)); do
     if ((I == 8)); then
-        echo "Best School"
-    else
         echo "Hi"
+    else
+        echo "Best School"
     fi
     I=$((I+1))
 done
