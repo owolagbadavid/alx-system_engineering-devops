@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# creates file and does some stuff with trap
+
+echo "$$" > /var/run/myscript.pid
+
+terminate() {
+	rm /var/run/myscript.pid
+	exit
+}
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+	trap 'echo "Y U no love me?!"' SIGINT
+	trap 'echo "I hate the kill command" && terminate' SIGTERM
+	trap 'terminate' SIGQUIT
+done
