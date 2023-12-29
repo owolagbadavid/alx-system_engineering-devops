@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 # Specify the server hostname or IP address
 server="54.208.64.8"
