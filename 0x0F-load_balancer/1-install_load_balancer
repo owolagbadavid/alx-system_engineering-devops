@@ -40,4 +40,4 @@ ln -s /usr/lib/haproxy/haproxy.init /etc/init.d/haproxy
 update-rc.d haproxy defaults
 
 # 4. Start HAProxy
-service haproxy restart
+sudo service haproxy restart
