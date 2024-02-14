@@ -1,17 +1,28 @@
 #!/usr/bin/python3
-"""Module for task 0"""
+""" Python Script return the number of subscribers """
+
+
+import requests
 
 
 def number_of_subscribers(subreddit):
-    """Queries the Reddit API and returns the number of subscribers
-    to the subreddit"""
-    import requests
+    """
+        number_of_subscribers Function Scrap Subscribers Number
+            subrredit - channel to check subscribers number
+            return - subscribers number
+            return - 0 if subreddit not found
+    """
+    session = requests.Session()
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    headers = {
+        "User-Agent": "User-Agent: ALX-Tasks/1.0\
+        (Linux; U; en-US; Dizzy_Back7390/Reddit)",
+        }
+    session.headers.update(headers)
+    response = session.get(url, allow_redirects=False)
 
-    sub_info = requests.get("https://www.reddit.com/r/{}/about.json"
-                            .format(subreddit),
-                            headers={"User-Agent": "My-User-Agent"},
-                            allow_redirects=False)
-    if sub_info.status_code >= 300:
+    if response.status_code == 200:
+        data = response.json()
+        return data["data"]["subscribers"]
+    else:
         return 0
-
-    return sub_info.json().get("data").get("subscribers")
