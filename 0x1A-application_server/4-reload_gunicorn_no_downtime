@@ -13,9 +13,9 @@ kill -HUP "$MASTER_PID"
 
 echo "Sent HUP signal to Gunicorn master process (PID $MASTER_PID)"
 
-# Optionally monitor reload progress
-# You can customize the following command to fit your needs
-echo "Monitoring reload progress (check logs for details):"
-tail -f /path/to/gunicorn_log.log
+# # Optionally monitor reload progress
+# # You can customize the following command to fit your needs
+# echo "Monitoring reload progress (check logs for details):"
+# tail -f /path/to/gunicorn_log.log
 
 echo "Gunicorn reload complete."
