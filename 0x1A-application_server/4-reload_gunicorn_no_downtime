@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
-# Gracefully reloads Gunicorn.
+# A simple Bash script to reload Gunicorn in a graceful way
 
-ps aux | grep gunicorn | awk '{ print $2 }' | xargs kill -HUP
+# Get the PID of the Gunicorn master process
+PID=$(ps aux | grep gunicorn | grep master | awk '{print $2}')
+
+# Send the HUP signal to Gunicorn to reload gracefully
+kill -HUP $PID
+
+# Check the status of Gunicorn
+gunicorn --check-config
