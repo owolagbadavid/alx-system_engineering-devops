@@ -4,7 +4,7 @@ MASTER_PID=$(pgrep -f "gunicorn master" | head -n 1)
 
 # Check if master process is found
 if [[ -z "$MASTER_PID" ]]; then
-  echo "Error: Gunicorn master process not found!"
+  # echo "Error: Gunicorn master process not found!"
   exit 1
 fi
 
